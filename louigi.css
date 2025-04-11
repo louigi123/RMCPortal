@@ -1,0 +1,315 @@
+/* General Styles */
+body {
+    background: url('RMC FRont.png') no-repeat center center fixed;
+    background-size: cover;  /* Ensures it covers the entire screen */
+
+    color: #2d27da;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 6, 69, 0.888); /* Light transparent layer */
+    backdrop-filter: blur(5px); /* Blur only this layer */
+    z-index: -1; /* Puts it behind everything */
+}
+.logo-container {
+    display: flex;
+    align-items: center;  /* Aligns logo and text */
+    gap: 10px;  /* Adds spacing between logo and title */
+}
+
+.logo-container img {
+    width: 50px;  /* Adjust the size as needed */
+    height: auto;  /* Maintains aspect ratio */ 
+        width: 100px;  /* Logo size */
+        height: auto;  /* Keeps aspect ratio */
+    
+}
+
+/* Header Styling */
+header {
+    background-color: #15a8fd9a; /*header background */
+    color: white;
+    padding: 7px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+
+
+
+}
+
+header h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 600px;
+        font-family: 'Poppins', sans-serif;  /* Apply Poppins font */
+        font-weight: 800;  /* Extra Bold */
+        font-style: italic;  /* Italic */
+        font-size: 1.8rem;  /* RMC Tagum Student Portal */
+        color: white;  
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Optional shadow */
+    
+}
+
+.nav-links a {
+    color: white !important; 
+    text-decoration: none; 
+    margin:  -100px;
+    font-weight: bold;
+    font-size: 10spx;
+    
+}
+
+.nav-links a:hover {
+    text-decoration:underline;
+    color: #ddd; 
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 15px;
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+/* Mission Section */
+.mission-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px;
+    background:none
+     auto;
+}
+
+
+
+.mission {
+    background: none
+    padding 20px;
+    max-width: 50%;
+    border-radius: 10px;
+    color: white;
+    text-align: justify;
+
+}
+
+.mission h2, .mission h3 {
+    color: white;
+    font-weight: bold; 
+        font-size: 30px; /* Adjust as needed */
+        font-weight: bold;
+        color: white;
+}
+
+.motto-container {
+    text-align: center; /* Centers the text */
+    margin-top: 20px; /* Adjust top spacing */
+}
+
+.pro-deo {
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 5px; /* Reduces space between text */
+}
+
+.pro-deo-sub {
+    font-size: 16px;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    margin-top: -10px; /* Moves it closer to the heading */
+}
+
+.motto {
+    font-size: 28px; 
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+
+.button-container {
+    text-align: center; /* Center aligns the buttons */
+    margin-top: 10px; /* Controls space between the text and buttons */
+}
+
+
+
+.mission-container {
+    display: flex;  /* Align text and image side by side */
+    justify-content: space-between; /* Creates space between text & image */
+    align-items: center; /* Align vertically */
+    color: white;
+    padding: 20px;
+}
+
+.mission-text {
+    flex: 1; /* Takes up available space */
+}
+
+
+.image-box {
+    width: 560px; /* Adjust size as needed */
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Optional: Rounded corners */
+    overflow: hidden; /* Ensures image stays inside box */
+}
+
+.image-box img {
+    width: 100%; /* Makes the image fit */
+    height: 100%;
+    object-fit: cover; /* Keeps image proportional */
+
+}
+.sign-in-box {
+    position: absolute;
+    top: 55%;
+    right: -100%; /* Start off-screen */
+    transform: translateY(-48%);
+    width: 520px;
+    height: 399px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    transition: right 0.5s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(26, 17, 17, 0.2);
+}
+
+#dashboard-page {
+    display: none;
+}
+/* When active, move into view */
+.sign-in-box.active {
+    right: 2%; /* Adjust as needed */
+}
+
+/* Input field container */
+.input-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.sign-in-box h2 {
+    font-size: 3rem; /* Adjust size as needed */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sign-in-box.active ~ .image-box {
+    display: none;
+}
+
+.input-container i {
+    font-size: 20px;
+    color: #333;
+    margin-right: 10px;
+}
+
+.input-container input {
+    border: none;
+    outline: none;
+    width: 100%; /*word sa password and gmail etc.*/
+    font-size: 16px;
+}
+
+#back-btn {
+    margin-top: 10px;
+    background: #090538;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+#back-btn:hover {
+    background: #0a032c;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 40px;
+    margin-inline: 40px;
+    display: flex;
+    gap: 10px;
+}
+
+
+
+
+.header, .footer {
+    background: linear-gradient(to right, #070a8d, #4CCEEB);
+    color: white; /* Ensure text is visible */
+    padding: 20px; /* Adjust spacing */
+    text-align: center; /* Center align text */
+}
+
+
+/* Footer Styling */
+footer {
+    background:linear-gradient(to right,#4CCEEB,#070a8d);
+    padding: 15px;
+    margin-top: 30px; /*footer background*/
+    color: white;
+    text-align: center;
+}
+
+/* Align contact info in one line */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between icons */
+    flex-wrap: wrap; /* Prevents breaking into multiple lines */
+    text-decoration: none;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin: 50;
+    font-size: 16px;
+}
+
+.contact-info i {
+    margin-right: 8px;
+    font-size: 20px;
+}

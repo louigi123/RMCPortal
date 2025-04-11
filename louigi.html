@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMC Tagum Student Portal</title>
+    <link rel="stylesheet" href="louigi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="RMC Logo"> <!-- Fixed Image Path -->
+            <h1>RMC Tagum Student Portal</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="#">About Us</a>
+            <a href="#">Home</a>
+            <a href="#">Contact</a>     
+        </nav>
+    </header>
+
+    <div class="overlay"></div> <!-- Background blur -->
+    <div class="content"></div>
+
+    <!-- Mission Section -->
+    <section class="mission-container">
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>The RMC Community is keeping up to produce “cream of the crop” graduates who are research-driven, 
+               community service-oriented, globally competitive, and life-long learners.</p>
+            <p>Established as a private educational institution, RMC is committed to upholding the laws of the Republic 
+               and the goals of the Department of Education, CHED, and TESDA. We aim to educate the Filipino in accordance 
+               with total personal development, regardless of sex, race, age, or economic status.</p>
+            <h3>Pro Deo Et Patria</h3>
+            <p>(God and Country)</p>
+
+            <!-- Login Button -->
+            <div class="buttons">
+                <button id="student-btn" style="font-size: 20px; font-weight: bold; padding: 15px 30px; background-color: rgb(36, 138, 223); color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    Login
+                </button>
+            </div>
+        </div>
+
+        <!-- Sign In Box -->
+        <div class="sign-in-box">
+            <h2>Sign In</h2>
+
+            <!-- I.D. Number -->
+            <div class="input-container">
+                <i class='bx bx-id-card'></i>
+                <input type="text" id="id" placeholder="Enter I.D. Number">
+            </div>
+
+            <!-- Email -->
+            <div class="input-container">
+                <i class='bx bx-envelope'></i>
+                <input type="email" id="email" placeholder="Enter Email">
+            </div>
+
+            <!-- Password -->
+            <div class="input-container">
+                <i class='bx bx-lock'></i>
+                <input type="password" id="password" placeholder="Enter Password">
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot Password</a>
+            </div>
+
+            <button id="sign-in-btn">Sign In</button>
+            <button id="back-btn">Back</button>
+        </div>
+
+        <!-- Image Box -->
+        <div class="image-box">
+            <img src="CAPSTONE.png" alt="Mission Image"> <!-- Fixed Image Path -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="contact-info">
+            <p>
+                <i class="bx bxl-gmail"></i>
+                <a href="mailto:admissions.rmctagum@gmail.com" style="text-decoration: none; color: inherit;">
+                    admissions.rmctagum@gmail.com
+                </a>
+            </p>
+            <p>
+                <i class="bx bxl-facebook-circle"></i>
+                <a href="https://www.facebook.com/RMCTagumBranchOfficial" target="_blank" style="text-decoration: none; color: inherit;">
+                    Rizal Memorial Colleges, Inc. Tagum
+                </a>
+            </p>
+            <p>
+                <i class="bx bxs-map"></i>
+                <a href="https://maps.app.goo.gl/svUdVLbUut9TV7DY8" target="_blank" style="text-decoration: none; color: inherit;">
+                    Purok Gulayan Boizer Avenue, Brgy. Mankilam, Tagum City
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Login & Logout -->
+    <script>
+        document.getElementById("student-btn").addEventListener("click", function() {
+            document.querySelector(".sign-in-box").classList.add("active");
+            document.querySelector(".image-box").style.display = "none";
+        });
+
+        document.getElementById("back-btn").addEventListener("click", function() {
+            document.querySelector(".sign-in-box").classList.remove("active");
+            document.querySelector(".image-box").style.display = "block";
+        });
+
+        document.getElementById("sign-in-btn").addEventListener("click", function() {
+            let id = document.getElementById("id").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (id && email && password) {
+                localStorage.setItem("isLoggedIn", "true"); // Store login status
+                window.location.href = "dashboard-page.html"; // Redirect to dashboard
+            } else {
+                alert("Please fill in all fields!");
+            }
+        });
+
+        // Auto Redirect to Dashboard if Already Logged In
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            window.location.href = "dashboard-page.html";
+        }
+    </script>
+
+</body>
+</html>

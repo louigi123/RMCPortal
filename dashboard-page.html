@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMC Tagum Student Portal</title>
+    <link rel="stylesheet" href="dashboard-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="logo.png" alt="School Logo" class="school-logo"> <!-- Fixed Image Path -->
+            <h2>RMC Tagum Student Portal</h2>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="#" class="active"><i class='bx bx-home'></i> Dashboard</a>
+            <a href="#"><i class='bx bx-user'></i> Profile</a>
+            <a href="#"><i class='bx bx-book'></i> Classes</a>
+            <a href="#"><i class='bx bx-bell'></i> Announcements</a>
+            <a href="#"><i class='bx bx-edit'></i> Enrollment</a>
+            <a href="#"><i class='bx bx-info-circle'></i> Mission, Vision, and Values</a>
+            <a href="#" id="logout"><i class="bx bx-log-out"></i> Logout</a> <!-- Fixed Logout Button -->
+        </nav>
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="user-info">
+                <i class='bx bx-user-circle'></i>
+                <span>JIM ROSS TAN</span>
+            </div>
+            <i class='bx bx-bell notification'></i>
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome-container">
+            <div class="welcome-text">
+                <p id="current-date"></p>
+                <h2>Welcome back, Jim!</h2>
+                <p>Always stay updated in your student portal.</p>
+            </div>
+            <img src="c:\Users\Manilyn\OneDrive\Attachments\Sir tan.jpg" alt="Profile Picture" class="profile-picture"> <!-- Fixed Image Path -->
+        </section>
+
+        <!-- Dashboard Menu -->
+        <section class="dashboard-menu">
+            <div class="menu-item">
+                <i class='bx bx-wallet'></i>
+                <p>Balance</p>
+            </div>
+            <div class="menu-item">
+                <i class='bx bx-check-circle'></i>
+                <p>Clearance</p>
+            </div>
+            <div class="menu-item">
+                <i class='bx bx-first-aid'></i>
+                <p>Clinic History</p>
+            </div>
+            <div class="menu-item">
+                <i class='bx bx-graduation'></i>
+                <p>Scholarship</p>
+            </div>
+            <div class="menu-item">
+                <i class='bx bx-list-check'></i>
+                <p>To-Dos</p>
+            </div>
+            <div class="menu-item">
+                <i class='bx bx-news'></i>
+                <p>School News</p>
+            </div>
+        </section>
+
+        <!-- Subject Teachers -->
+        <section class="teachers-section">
+            <h3>Subject Teachers</h3>
+            <div class="teachers-list">
+                <img src="teacher1.jpg" alt="Teacher 1">
+                <img src="teacher2.jpg" alt="Teacher 2">
+                <img src="teacher3.jpg" alt="Teacher 3">
+            </div>
+        </section>
+
+        <!-- Daily Reminders -->
+        <section class="reminders-section">
+            <h3>Daily Reminders</h3>
+            <ul>
+                <li><i class='bx bx-message-square-dots'></i> Ma'am Menche posted an assignment (COR 18)</li>
+                <li><i class='bx bx-message-square-dots'></i> Sir Dave posted an assignment (STEM 100)</li>
+                <li><i class='bx bx-message-square-dots'></i> Ma'am Dags posted an assignment (Gosur 50)</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("hidden");
+            document.getElementById("mainContent").classList.toggle("shift");
+        }
+
+        // Auto Redirect to Login Page if Not Logged In
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "louigi.html"; // Redirect to login page
+        }
+
+        // Logout Functionality
+        document.getElementById("logout").addEventListener("click", function(event) {
+            event.preventDefault();  // Prevent default link action
+            localStorage.removeItem("isLoggedIn"); // Remove login status
+            window.location.href = "louigi.html"; // Redirect to login page
+        });
+
+        // Display Current Date
+        document.getElementById("current-date").textContent = new Date().toLocaleDateString();
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const dateElement = document.getElementById("current-date");
+
+    // Get current date
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const today = new Date().toLocaleDateString("en-US", options);
+
+    // Display formatted date
+    dateElement.textContent = today;
+});
+    </script>
+</body>
+</html>
